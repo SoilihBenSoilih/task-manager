@@ -2,11 +2,6 @@
 
 :root {
     --border-radius: 2px;
-    --color-big: #786450;
-    --color-small: #83796f;
-    --center-color: #fff;
-    --box-bg: #F5E8DF;
-    --checked-color: #C8D4D9;
     --box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 }
 
@@ -89,7 +84,7 @@ h2 {
     font-size: 12px;
     margin: 0;
     cursor: pointer;
-    transition: color .3s ease-in-out;
+    transition: color .5s ease-in-out;
 }
 
 input[type="checkbox"] {
@@ -99,7 +94,7 @@ input[type="checkbox"] {
 .text {
     font-size: 12px;
     cursor: pointer;
-    transition: color .3s ease-in-out;
+    transition: color .5s ease-in-out;
 }
 
 .button {
@@ -109,13 +104,14 @@ input[type="checkbox"] {
     height: 12px;
     cursor: pointer;
     z-index: 2;
+    transition: transform .4s ease-in-out .6s, opacity .4s ease-in-out .6s;
 }
 
 
 .checkmark {
     position: absolute;
     top: 50%;
-    right: 2px;
+    right: 0px;
     transform: translateY(-50%);
     stroke: #C8D4D9;
     fill: none;
@@ -131,8 +127,9 @@ input:checked ~ .text {
 }
 
 input:checked ~ .button {
-    border: none;
-    transition: all .5s ease-out .4s;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: transform .4s ease-in-out, opacity .4s ease-in-out;
 }
 
 input:checked ~ .checkmark {
